@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Image Generator</title>
+    <style>
+      
+      <style>
+
+      /* Basic Reset */
+      body,
+      h1,
+      p,
+      input,
+      button {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Comic Neue', sans-serif;
+        /* Playful font */
+        background-color: #B9DECC;
+        /* Soft peach background */
+        color: #9E79E0;
+        /* Dark text for readability */
+        line-height: 1.6;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 2.5em;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 80%;
+        border: 2px solid #9DC6E0;
+        /* Soft border color */
+        border-radius: 5px;
+        /* Rounded corners for the input field */
+        font-size: 1em;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #f9a826;
+        /* Vibrant button color */
+        color: #fff;
+        /* White text */
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #9DC6E0;
+        /* Darker shade on hover */
+      }
+
+      #imageResult img {
+        max-width: 100%;
+        border-radius: 8px;
+        /* Rounded corners for images */
+      }
+
+      /* Add more styles based on your preference */
+    </style>
+
+  </head>
+  <body>
+
+    <h1>Image Generator</h1>
+    <p>Enter a short prompt, get an image.</p>
+
+    <!-- Form for input and submit -->
+    <form id="promptForm">
+      <input type="text" id="imagePrompt" placeholder="Enter your prompt here" required>
+      <button type="submit">Generate Image</button>
+    </form>
+
+    <!-- Section to display the resulting image -->
+    <div id="imageResult"></div>
+
+    <script>
+      // JavaScript to handle the form submission and image display will go here
+      document.getElementById('promptForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        const prompt = document.getElementById('imagePrompt').value;
+        // Here, you would typically call your API to get an image based on the prompt
+        // For demonstration, let's just display the prompt in the imageResult div
+        document.getElementById('imageResult').innerHTML = `<p>Image for: ${prompt}</p>`;
+        // Add logic to fetch and display the image from your chosen API
+      });
+    </script>
+
+  </body>
+</html>
